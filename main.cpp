@@ -5,21 +5,16 @@ using namespace std;
 // COMSC-210 | Lab 5 | Ian Kusmiantoro
 
 // Renamed to swapUsingPointers because it was conflicting with the in built std::swap() func
-int swapUsingPointers(int* a, int* b);
+int swap(int* a, int* b);
 
 int main() {
-
-    // Changed from original to use pointers completely
-    int* x = new int;
-    *x = 5;
-    int* y = new int;
-    *y = 10;
-
-    cout << "x = " << *x << " | y = " << *y << endl;
+    // Unchanged as they are not reference variables.
+    int x = 5, y = 10;
+    cout << "x = " << x << " | y = " << y << endl;
 
     cout << "Swapping...\n";
-    int sum = swapUsingPointers(x, y); // Pass in the pointers x and y
-    cout << "x = " << *x << " | y = " << *y << endl;
+    int sum = swap(&x, &y); // Pass in the addresses of x and y
+    cout << "x = " << x << " | y = " << y << endl;
     cout << "sum = " << sum << endl;
     return 0;
 }
@@ -27,7 +22,7 @@ int main() {
 // swapUsingPointers() swaps the values contained by 2 pointers, then returns the sum
 // arguments: int* a, int* b
 // returns int which is the sum
-int swapUsingPointers(int* a, int* b) {
+int swap(int* a, int* b) {
     int temp = *a;
     *a = *b;
     *b = temp;
