@@ -8,16 +8,17 @@ using namespace std;
 int swapUsingPointers(int* a, int* b);
 
 int main() {
-    int* x = new int; // Create a pointer to an int
-    *x = 5;
 
+    // Changed from original to use pointers completely
+    int* x = new int;
+    *x = 5;
     int* y = new int;
     *y = 10;
 
     cout << "x = " << *x << " | y = " << *y << endl;
 
     cout << "Swapping...\n";
-    int sum = swapUsingPointers(x, y);
+    int sum = swapUsingPointers(x, y); // Pass in the pointers x and y
     cout << "x = " << *x << " | y = " << *y << endl;
     cout << "sum = " << sum << endl;
     return 0;
