@@ -4,7 +4,6 @@ using namespace std;
 
 // COMSC-210 | Lab 5 | Ian Kusmiantoro
 
-// Renamed to swapUsingPointers because it was conflicting with the in built std::swap() func
 int swap(int* a, int* b);
 
 int main() {
